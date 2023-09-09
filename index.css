@@ -1,0 +1,527 @@
+@tailwind base;
+@tailwind components;
+
+body{
+  overflow-x: hidden;
+}
+/* ===================================================header section start================================================= */
+.nav {
+    height:auto;
+    width: 100%;
+    background-color: white;
+    position: relative;
+    padding: 30px;
+}
+
+  .nav > .nav-header {
+    display: inline;
+  }
+  .nav > .nav-header > .nav-title{
+    display: inline-block;
+}
+
+  
+  .nav > .nav-btn {
+    display: none;
+  }
+  
+  .nav > .nav-links{
+    display: inline;
+    float: right;
+    font-size: 18px;
+    z-index: 20;
+  }
+  
+  .nav > .nav-links > .internal_link > a{
+    display: inline-block;
+    padding: 5px 10px 13px 10px;
+    text-decoration: none;
+    color:black;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .nav-links > label > .fa-times-circle{
+  color: black;
+  font-size: 35px;
+  margin-top: 20px;
+  display: inline-block;
+ }
+  
+  .nav > #nav-check {
+    display: none;
+  } 
+   #close{
+    display: none;
+   }
+  @media (max-width:600px) {
+    .nav > .nav-header > .nav-title > img{
+      width: 210px;
+    }
+    .nav > .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+    .nav > .nav-btn > label {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding-top:35px;
+    }
+    #close{
+      display:block;
+     }
+    .nav > .nav-btn > label > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #181515;
+    }
+    .nav > .nav-links{
+       position: absolute;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      background-color: #ffffff;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top:0px;
+      left:0px;
+    }
+    .nav > .nav-links > .internal_link{
+      display: block;
+       display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+      height: 100vh;
+      padding-left: -20px; 
+       
+    } 
+     .nav > .nav-links > .internal_link > a {
+      display: block;
+      width: 100%;
+      color: #00000061;
+      font-weight:500;
+      font-size: 35px;
+    } 
+      
+
+     .nav > #nav-check:not(:checked) ~ .nav-links {
+      height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+      height:100vh;
+      overflow-y: auto;
+    }
+  } 
+  @media (min-width:600px){
+    .nav {
+    padding:47px;
+  }
+  .nav > .nav-header > .nav-title > img{
+    width: 250px;
+  }
+  }
+  /* ===================================================header section end================================================= */
+
+  /* =========================================Slider section start================================================ */
+  html, body {
+   background: url("http://digital.bnint.com/filelib/s9/photos/white_wood_4500x3000_lo_res.jpg");
+}
+
+.carousel {
+    position: relative;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    /* margin-top: 26px; */
+}
+
+.carousel-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+}
+
+.carousel-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+
+.carousel-item img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.carousel-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 2%;
+}
+
+.carousel-control.next {
+    right: 2%;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2{
+    display: block;
+}
+
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.carousel-bullet {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.carousel-bullet:hover {
+    color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet{
+    color: #428bca;
+}
+
+#title {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
+}
+/* =========================================Slider section end================================================ */
+
+/* what we stand section start */
+.stand_section{
+    @apply px-[20px] pt-[33px] xl:flex;
+}
+    .stand_section_01 > h3{
+        @apply text-base text-[#7D7D7D];
+        animation: drop-in 1s ease 200ms backwards;
+    }
+
+    .stand_section_01 > h1{
+        @apply text-[33px] text-[#636363] font-semibold;
+        animation: drop-in 1s ease 200ms backwards;
+    }
+    .stand_section > h5{
+        @apply text-base text-[#000000];
+        animation: drop-in 1s ease 1200ms backwards;
+    }
+    @keyframes drop-in{
+        from {
+         opacity: 0;
+         transform: translateY(-100px);
+        }
+        to {
+         opacity: 1;
+         transform: translate(0px);
+        }
+       }
+
+    .stand_section_02{
+        @apply grid grid-cols-1 gap-y-6 md:grid-cols-3 md:gap-x-4;
+    }
+    .stand_section_02 > .stand_cards{
+        @apply flex flex-col justify-center items-center text-center
+        bg-[#F5F5F5] py-[30px] px-[20px] rounded-2xl;
+        animation: arrowright 1s ease 1200ms backwards;
+    }
+    .stand_section_02 > .stand_cards > img{
+        @apply w-[60px] h-[60px] ;
+        animation: arrowright 1s ease 1200ms backwards;
+    }
+    .stand_section_02 > .stand_cards > h2{
+        @apply text-[25px] text-[#32AB52] font-semibold;
+        animation: arrowup 1s ease 1200ms backwards;
+    }
+    .stand_section_02 > .stand_cards > p{
+        @apply text-base;
+        animation: arrowup 1s ease 1200ms backwards;
+    }
+    @keyframes arrowup {
+        from {
+          opacity: 0;
+          -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+        }
+      
+        to {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      
+      .arrowup {
+        -webkit-animation-name: arrowup;
+        animation-name: arrowup;
+      }
+      @-webkit-keyframes arrowright {
+        from {
+          opacity: 0;
+          -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
+        }
+      
+        to {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes arrowright {
+        from {
+          opacity: 0;
+          -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
+        }
+      
+        to {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      
+      .arrowright {
+        -webkit-animation-name: arrowright;
+        animation-name: arrowright;
+      }
+      
+
+/* what we stand section end */
+
+
+/* services section start */
+.services_section{
+    @apply flex flex-col justify-center items-center text-center;
+}
+.services_section > h4{
+    @apply text-[18px];
+    animation: fadeIn 1s ease 500ms backwards;
+}
+@-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+  }
+  .services_section_cards{
+    @apply md:grid md:grid-cols-2 md:gap-x-20 xl:grid-cols-4 xl:gap-x-10;
+  }
+.services_section > h1{
+    @apply text-[36px];
+    animation: fadeIn 1s ease 500ms backwards;
+}
+.services_section_cards > .services_card{
+    animation: arrowright 1s ease 1200ms backwards;
+}
+.services_section_cards > .services_card > img{
+    @apply w-[258px] h-[389px];
+}
+.services_section_cards > .services_card > h3{
+    @apply text-[22px] font-bold text-[#32AB52];
+}
+/* services section end */
+
+/* why autologicaAI section start */
+
+/* Style the accordion header */
+
+
+/* why autologicaAI section end */
+
+/* mission section start */
+.mission_section{
+  @apply bg-[#32ab52] px-[35px] py-[50px] lg:grid lg:grid-cols-2 lg:gap-x-14;
+}
+.mission_section_01{
+  @apply grid grid-cols-1 gap-y-7 pb-16 md:grid-cols-2 md:gap-x-10;
+}
+.mission_section_01 > .our_mission > h2{
+  @apply text-base font-semibold pb-2;
+  animation: arrowright 1s ease 1200ms backwards;
+  
+}
+.mission_section_01 > .our_mission > p{
+  @apply text-[14px] text-[#FFFFFF] font-semibold;
+  animation: arrowright 1s ease 1200ms backwards;
+}
+.mission_section_02 > h1{
+  @apply text-[30px] text-[#FFFFFF] font-bold;
+  animation: fadeIn 1s ease 500ms backwards;
+}
+/* mission section end */
+
+/* our customer section start */
+.our_Customer{
+  @apply text-center flex flex-col justify-center items-center py-16;
+}
+
+.our_Customer > h2{
+  @apply text-[25px] font-bold mb-10;
+  animation: fadeIn 1s ease 500ms backwards;
+}
+
+.our_Customer > img{
+  animation: drop-up 1s ease 1200ms backwards;
+}
+@keyframes drop-up{
+  from {
+   opacity: 0;
+   transform: translateY(-100px);
+  }
+  to {
+   opacity: 1;
+   transform: translate(0px);
+  }
+ }
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+/* our customer section end */
+
+
+/* footer section start */
+footer{
+  @apply bg-[#f2fff4] px-[35px] pt-[30px] py-[20px];
+}
+.footer_1{
+  @apply xl:grid xl:grid-cols-3;
+}
+.footer_1 > .c_1{
+  @apply grid grid-cols-1 w-[305px] h-[163.94px];
+}
+.footer_1 > .c_1 > img{
+  @apply h-[44.94px] w-[259.25px]
+}
+.footer_1 > .c_1 > .c_1_s{
+  @apply text-base text-[#808080];
+} 
+
+.c_2{
+  @apply grid grid-cols-1  w-[305px] h-[135.59px];
+}
+.c_2 > h3{
+  @apply text-xl text-[#000000] font-bold ;
+}
+.c_2 > ul > li{
+  @apply  text-base text-[#808080] pb-0;
+} 
+.c_2_c_3{
+  @apply grid grid-cols-1 md:grid-cols-3 xl:flex xl:justify-between;
+}
+
+.c_3{
+  @apply flex items-end justify-between w-[285px] 
+  h-[40px] md:flex-col md:mt-9 md:ml-[-60px] lg:flex-row;
+} 
+.c_3 > .c_t{
+  @apply text-base text-[#444444] pb-3  ;
+} 
+
+.footer_2 > .d_1{
+  @apply  text-base text-[#444444] py-2;
+} 
+
+.footer_2 > .d_2 > .d_2_logo{
+  @apply flex   p-[10px];
+}
+.footer_2 > .d_2{
+  @apply md:flex md:justify-end;
+}
+.footer_2 > .d_2 > .d_2_logo > .social_media-logo{
+  @apply mx-[5px] h-[32.39px] w-[32.39px] rounded-sm bg-[#32ab52] flex justify-center items-center;
+}
+
+.footer_2 > .d_2 > .d_2_logo > .social_media-logo > .fa-brands{
+  @apply text-white; 
+} 
+/* footer section end */
+
+@tailwind utilities;
